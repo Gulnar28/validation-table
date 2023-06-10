@@ -1,31 +1,31 @@
 "use strict";
 
+let data = "";
+let color = '';
 
-// let slc = document.getElementById('slc');
+let slc = document.getElementById('slc');
 
-// slc.addEventListener('change', ()=>{
-//     console.log('value changed');
-// })
+slc.addEventListener('change', ()=>{
+    console.log('value changed');
+})
     
 
-//  let data = "";
-//  let color = '';
- 
 
 
-//     let select = parseInt(slc.value);
-//  for (let i = 0; i < select; i++) {
-//   data += `<tr>`;
 
-//   for (let j = 0; j < select; j++) {
-//     color = (i+j)%2 === 0 ? 'black' : '';
-//     data += `<td style="background-color:${color};">  </td>`;
-//    }
+    let select = parseInt(slc.value);
+ for (let i = 0; i < select; i++) {
+  data += `<tr>`;
 
-//   data += `</tr>`;
-//  }
+  for (let j = 0; j < select; j++) {
+    color = (i+j)%2 === 0 ? 'black' : '';
+    data += `<td style="background-color:${color};">  </td>`;
+   }
 
-// document.getElementById('tbl').innerHTML = data;
+  data += `</tr>`;
+ }
+
+document.getElementById('tbl').innerHTML = data;
 
 
 
@@ -57,27 +57,3 @@
 
    
     
-
-let data = "";
-let color = '';
-
-const selection = document.getElementById("slc");
-
-selection.addEventListener("change", (e) => {
-    const optValue = parseInt(selection.options[selection.selectedIndex].innerText);
-
-    data = "";
-
-    for (let i = 0; i < optValue; i++) {
-        data += "<tr>";
-
-        for (let j = 0; j < optValue; j++) {
-            color = i===j ? 'black' : '';
-          data += `<td style="background-color:${color};">  </td>`;
-        }
-
-        data += "</tr>";
-    }
-
-    document.getElementById('tbl').innerHTML = data;
-});
